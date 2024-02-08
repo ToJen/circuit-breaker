@@ -1,3 +1,4 @@
+import json
 import typer
 from soli_check import check
 
@@ -8,7 +9,9 @@ def main(bytecode: str):
         "report": report,
         "result": result
     }
-    print(response)
+    out = json.dumps(response, indent=4)
+
+    print(out)
 
 
 if __name__ == "__main__":

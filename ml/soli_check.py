@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 import re
+import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -11,8 +12,12 @@ TRUNC_TYPE = 'post'
 PADDING_TYPE = 'post'
 OOV_TOKEN = '<OOV>'
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+tokenizer_path = os.path.join(script_dir, 'model', 'tokenizer.pickle')
+model_path = os.path.join(script_dir, 'model', 'model_sm_rus_6.h5')
+
 # Load the tokenizer
-with open('./model/tokenizer.pickle', 'rb') as fh:
+with open(tokenizer_path, 'rb') as fh:
     tokenizer = pickle.load(fh)
 
 def re_hex_val(opcode):
@@ -35,7 +40,7 @@ def prepare(opcode):
     return opcode
 
 # Load the pre-trained model
-model = load_model('./model/model_sm_rus_6.h5')
+model = load_model(model_path)
 
 # model.summary() # commented out, too verbose 
 

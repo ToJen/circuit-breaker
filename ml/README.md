@@ -8,7 +8,7 @@
 
 ### Python
 - Create  virtual env
-  - `pyenv exec python -m venv ./venv`
+  - `python -m venv ./venv`
 - Activate venv
   - `source ./venv/bin/activate`
 - Install dependencies
