@@ -15,7 +15,7 @@
 
 ## Generate Proof
 - Replace the `bytecode` value in [Prover.toml](./Prover.toml) with another.
-- `nargo prove`
+- `nargo prove --oracle-resolver http://localhost:8000/api`
 
 ## Verify Proof
 `nargo verify`
