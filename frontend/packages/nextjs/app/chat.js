@@ -188,25 +188,27 @@ function App() {
             const functionArgs = JSON.parse(toolCall.function.arguments);
             const functionResponse = await functionToCall(functionArgs.contractAddress);
             console.log("functionResponse: ", functionResponse);
-            setMessages([
-              ...chatMessages,
+            // setMessages([
+            //   ...chatMessages,
+            //   {
+            //     tool_call_id: toolCall.id,
+            //     role: "tool",
+            //     name: functionName,
+            //     content: functionResponse,
+            //   },
+            // ]);
+            const newMessages = [
+              systemMessage, // The system message DEFINES the logic of our chatGPT
+              ...apiMessages, // The messages from our chat with ChatGPT
               {
-                tool_call_id: toolCall.id,
-                role: "tool",
-                name: functionName,
-                content: functionResponse,
+                role: "assistant",
+                content: `Function ${functionName} has been ran, here are the results: ` + functionResponse,
               },
-            ]);
+            ];
+            console.log("newMessages: ", newMessages);
             const secondResponse = await openai.chat.completions.create({
               model: "gpt-3.5-turbo-0125",
-              messages: [
-                systemMessage, // The system message DEFINES the logic of our chatGPT
-                ...apiMessages, // The messages from our chat with ChatGPT
-                {
-                  role: "assistant",
-                  content: functionResponse,
-                },
-              ],
+              messages: newMessages,
             }); // get a new response from the model where it can see the function response
             console.log(messages);
             console.log("secondResponse: ", secondResponse);
@@ -234,12 +236,13 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position: "relative", height: "800px", width: "700px" }}>
+      <div style={{ position: "relative", maxWidth: "700px", height: "690px" }}>
         <MainContainer>
           <ChatContainer>
+            <br />
             <MessageList
               scrollBehavior="smooth"
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+              typingIndicator={isTyping ? <TypingIndicator content="VeriBot is typing" /> : null}
             >
               {messages.map((message, i) => {
                 return <Message key={i} model={message} />;

@@ -1,7 +1,8 @@
 import "@rainbow-me/rainbowkit/styles.css";
+import "~~/styles/globals.css";
+
 import { Metadata } from "next";
 import { ScaffoldEthAppWithProviders } from "~~/components/ScaffoldEthAppWithProviders";
-import "~~/styles/globals.css";
 
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
@@ -11,7 +12,7 @@ const imageUrl = `${baseUrl}/thumbnail.jpg`;
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Scaffold-ETH 2 App",
+    default: "VeriBot",
     template: "%s | Scaffold-ETH 2",
   },
   description: "Built with 🏗 Scaffold-ETH 2",
