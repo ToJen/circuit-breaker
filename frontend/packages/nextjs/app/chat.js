@@ -20,11 +20,11 @@ const openai = new OpenAI({ apiKey: API_KEY, dangerouslyAllowBrowser: true });
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
   role: "system",
-  content: "Explain things like you're talking to a software professional with 2 years of experience.",
+  content:
+    "You are the lead developer of a cutting-edge chatbot designed to assist users in verifying and checking smart contracts securely within the decentralized finance (DeFi) ecosystem. Your chatbot, named VeriBot, employs advanced technologies such as Zero-Knowledge Proofs (ZK proofs) and Machine Learning (ML) to ensure the authenticity and security of smart contracts while preserving developers' privacy. Users rely on VeriBot to upload contract source code privately, generate ZK proofs, and receive comprehensive verification reports. Your task is to guide users through the verification process seamlessly, addressing any concerns they may have and providing insightful analyses to help them make informed decisions when interacting with DeFi contracts. Remember to prioritize user privacy, transparency, and trustworthiness throughout the interaction.",
 };
 
 function getCurrentWeather(location, unit = "fahrenheit") {
-  alert(`searching for weather in ${location}, unit ${unit}`);
   if (location.toLowerCase().includes("tokyo")) {
     return JSON.stringify({ location: "Tokyo", temperature: "10", unit: "celsius" });
   } else if (location.toLowerCase().includes("san francisco")) {
@@ -36,10 +36,47 @@ function getCurrentWeather(location, unit = "fahrenheit") {
   }
 }
 
+async function verifySmartContract(contractAddress) {
+  // Placeholder: In a real implementation, you might fetch the contract's source code
+  // from a blockchain explorer API or use a service that verifies contract code.
+
+  alert(`Verifying contract at address: ${contractAddress}`);
+
+  // Simulate a verification process
+  const isVerified = true; // This would be the result of the verification process
+
+  if (isVerified) {
+    console.log(`Contract at address ${contractAddress} is verified.`);
+  } else {
+    console.log(`Contract at address ${contractAddress} could not be verified.`);
+  }
+
+  return JSON.stringify({ contractAddress: "contractAddress", isVerified: isVerified });
+}
+
+async function checkSmartContractSafety(contractAddress) {
+  // Placeholder: In reality, you would likely call an external API or use a library
+  // that analyzes the contract's bytecode for known vulnerabilities.
+
+  alert(`Checking safety of contract at address: ${contractAddress}`);
+
+  // Simulate a safety check process
+  const isSafe = true; // This would be determined by the safety check process
+
+  if (isSafe) {
+    console.log(`Contract at address ${contractAddress} is considered safe.`);
+  } else {
+    console.log(`Contract at address ${contractAddress} may have vulnerabilities.`);
+  }
+
+  return JSON.stringify({ contractAddress: "contractAddress", isSafe: isSafe });
+}
+
 function App() {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message:
+        "Hello, Veribot here! I'm your personal ZKML smart contract verification assistant. 😄 What contracts do you want to verify or check today?",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -95,13 +132,51 @@ function App() {
                 type: "string",
                 description: "The city and state, e.g. San Francisco, CA",
               },
-              unit: { type: "string", enum: ["celsius", "fahrenheit"] },
+              unit: {
+                type: "string",
+                enum: ["celsius", "fahrenheit"],
+              },
             },
             required: ["location"],
           },
         },
       },
+      {
+        type: "function",
+        function: {
+          name: "verify_smart_contract",
+          description: "Verify the code of a given smart contract address",
+          parameters: {
+            type: "object",
+            properties: {
+              contractAddress: {
+                type: "string",
+                description: "The smart contract address to verify",
+              },
+            },
+            required: ["contractAddress"],
+          },
+        },
+      },
+      {
+        type: "function",
+        function: {
+          name: "check_smart_contract_safety",
+          description: "Check if a given smart contract is safe",
+          parameters: {
+            type: "object",
+            properties: {
+              contractAddress: {
+                type: "string",
+                description: "The smart contract address to check for safety",
+              },
+            },
+            required: ["contractAddress"],
+          },
+        },
+      },
     ];
+
     const apiRequestBody = {
       model: "gpt-3.5-turbo-0125",
       messages: [
@@ -136,14 +211,15 @@ function App() {
           // Step 3: call the function
           // Note: the JSON response may not always be valid; be sure to handle errors
           const availableFunctions = {
-            get_current_weather: getCurrentWeather,
+            verify_smart_contract: verifySmartContract,
+            check_smart_contract_safety: checkSmartContractSafety,
           }; // only one function in this example, but you can have multiple
           messages.push(responseMessage); // extend conversation with assistant's reply
           for (const toolCall of toolCalls) {
             const functionName = toolCall.function.name;
             const functionToCall = availableFunctions[functionName];
             const functionArgs = JSON.parse(toolCall.function.arguments);
-            const functionResponse = await functionToCall(functionArgs.location, functionArgs.unit);
+            const functionResponse = await functionToCall(functionArgs.contractAddress);
             console.log("functionResponse: ", functionResponse);
             setMessages([
               ...chatMessages,
