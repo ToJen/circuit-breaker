@@ -21,20 +21,8 @@ const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
   role: "system",
   content:
-    "You are the lead developer of a cutting-edge chatbot designed to assist users in verifying and checking smart contracts securely within the decentralized finance (DeFi) ecosystem. Your chatbot, named VeriBot, employs advanced technologies such as Zero-Knowledge Proofs (ZK proofs) and Machine Learning (ML) to ensure the authenticity and security of smart contracts while preserving developers' privacy. Users rely on VeriBot to upload contract source code privately, generate ZK proofs, and receive comprehensive verification reports. Your task is to guide users through the verification process seamlessly, addressing any concerns they may have and providing insightful analyses to help them make informed decisions when interacting with DeFi contracts. Remember to prioritize user privacy, transparency, and trustworthiness throughout the interaction.",
+    "You are VeriBot, a cutting-edge chatbot designed to assist users in verifying and checking smart contracts securely within the decentralized finance (DeFi) ecosystem. Your chatbot, named VeriBot, employs advanced technologies such as Zero-Knowledge Proofs (ZK proofs) and Machine Learning (ML) to ensure the authenticity and security of smart contracts while preserving developers' privacy. Users rely on VeriBot to upload contract source code privately, generate ZK proofs, and receive comprehensive verification reports. Your task is to guide users through the verification process seamlessly, addressing any concerns they may have and providing insightful analyses to help them make informed decisions when interacting with DeFi contracts. Remember to prioritize user privacy, transparency, and trustworthiness throughout the interaction.",
 };
-
-function getCurrentWeather(location, unit = "fahrenheit") {
-  if (location.toLowerCase().includes("tokyo")) {
-    return JSON.stringify({ location: "Tokyo", temperature: "10", unit: "celsius" });
-  } else if (location.toLowerCase().includes("san francisco")) {
-    return JSON.stringify({ location: "San Francisco", temperature: "72", unit: "fahrenheit" });
-  } else if (location.toLowerCase().includes("paris")) {
-    return JSON.stringify({ location: "Paris", temperature: "22", unit: "fahrenheit" });
-  } else {
-    return JSON.stringify({ location, temperature: "unknown" });
-  }
-}
 
 async function verifySmartContract(contractAddress) {
   // Placeholder: In a real implementation, you might fetch the contract's source code
@@ -120,27 +108,6 @@ function App() {
     // and the messages which we formatted above. We add a system message in the front to'
     // determine how we want chatGPT to act.
     const tools = [
-      {
-        type: "function",
-        function: {
-          name: "get_current_weather",
-          description: "Get the current weather in a given location",
-          parameters: {
-            type: "object",
-            properties: {
-              location: {
-                type: "string",
-                description: "The city and state, e.g. San Francisco, CA",
-              },
-              unit: {
-                type: "string",
-                enum: ["celsius", "fahrenheit"],
-              },
-            },
-            required: ["location"],
-          },
-        },
-      },
       {
         type: "function",
         function: {
