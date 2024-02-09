@@ -2,12 +2,18 @@ import "./App.css";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 import {
+  Avatar,
   ChatContainer,
+  ConversationHeader,
+  InfoButton,
   MainContainer,
   Message,
   MessageInput,
   MessageList,
   TypingIndicator,
+  VideoCallButton,
+  VoiceCallButton,
+  emilyIco,
 } from "@chatscope/chat-ui-kit-react";
 
 import OpenAI from "openai";
@@ -39,7 +45,7 @@ async function verifySmartContract(contractAddress) {
     console.log(`Contract at address ${contractAddress} could not be verified.`);
   }
 
-  return JSON.stringify({ contractAddress: "contractAddress", isVerified: isVerified });
+  return `Contract at address ${contractAddress} is verified.`;
 }
 
 async function checkSmartContractSafety(contractAddress) {
@@ -57,7 +63,7 @@ async function checkSmartContractSafety(contractAddress) {
     console.log(`Contract at address ${contractAddress} may have vulnerabilities.`);
   }
 
-  return JSON.stringify({ contractAddress: "contractAddress", isSafe: isSafe });
+  return `Contract at address ${contractAddress} is considered safe.`;
 }
 
 function App() {
@@ -202,7 +208,7 @@ function App() {
               ...apiMessages, // The messages from our chat with ChatGPT
               {
                 role: "assistant",
-                content: `Function ${functionName} has been ran, here are the results: ` + functionResponse,
+                content: `You have ran the function ${functionName} on the smart contract, here are the results: ${functionResponse}. Inform the user of the results.`,
               },
             ];
             console.log("newMessages: ", newMessages);
@@ -239,7 +245,18 @@ function App() {
       <div style={{ position: "relative", maxWidth: "700px", height: "690px" }}>
         <MainContainer>
           <ChatContainer>
-            <br />
+            <ConversationHeader>
+              <Avatar
+                src="https://static.vecteezy.com/system/resources/previews/004/619/774/original/laughing-robot-emoji-color-icon-happy-chatbot-smiley-with-broad-smile-and-closed-eyes-chat-bot-emoticon-artificial-conversational-entity-virtual-assistant-isolated-illustration-vector.jpg"
+                name="Emily"
+              />
+              <ConversationHeader.Content userName="VeriBot" info="🟢 Active now" />
+              <ConversationHeader.Actions>
+                <VoiceCallButton />
+                <VideoCallButton />
+                <InfoButton />
+              </ConversationHeader.Actions>
+            </ConversationHeader>
             <MessageList
               scrollBehavior="smooth"
               typingIndicator={isTyping ? <TypingIndicator content="VeriBot is typing" /> : null}
