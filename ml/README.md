@@ -14,7 +14,10 @@
 - Install dependencies
   - `pip install -r requirements.txt`
 - Run it
-  - `python main.my <contract_bytecode>`
+  - `python main.py <contract_bytecode>`
+  - OR 
+  - `python3 main.py <contract_bytecode>`
+
 
 ### Docker
 - Build image
