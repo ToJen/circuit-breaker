@@ -13,6 +13,16 @@ struct Value {
 }
 
 #[derive(Serialize, Deserialize)]
+struct BytecodeChunks {
+    chunks: Vec<String>, // A vector to hold chunks of bytecode
+}
+
+#[derive(Serialize, Deserialize)]
+struct BytecodeParam {
+    bytecode: String,
+}
+
+#[derive(Serialize, Deserialize)]
 struct SingleForeignCallParam {
     single: Value, // Rust convention is to use snake_case for field names
 }
@@ -45,13 +55,12 @@ async fn inference(
 ) -> Result<ForeignCallResult, jsonrpc_v2::Error> {
     println!("{params}");
     
-    match serde_json::from_value::<SingleForeignCallParam>(params.clone()) {
+    match serde_json::from_value::<String>(params.clone()) {
         Err(e) => {
-            eprintln!("Failed to parse inference params: {}", e);
+            eprintln!("Failed to parse inference params as string: {}", e);
             return Err(jsonrpc_v2::Error::INVALID_PARAMS);
-        }
-        Ok(p) => {
-            let bytecode = p.single.inner;
+        },
+        Ok(bytecode) => {
             match exec_python_model(bytecode) {
                 Ok(output) => {
                     println!("Python Output: {:?}", output);
