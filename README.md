@@ -1,7 +1,7 @@
 # VeriZK
 
 
-<img src="./docs/Logo.png" alt="Logo" width="200" />
+<img src="./docs/LOGO.png" alt="Logo" width="200" />
 
 ## TL;DR: 
 
