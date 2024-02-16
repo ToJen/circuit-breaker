@@ -2,16 +2,6 @@
 
 Use zkML to prove the absence of vulnerabilities in (closed-) source code.
 
-# instructions:
-
-```
-cd frontend
-yarn install
-yarn chain
-yarn deploy
-yarn start
-```
-
 ## Purpose
 
 VeriZK leverages zkML (Zero-Knowledge Machine Learning) to prove the absence of vulnerabilities in (closed-) source code, particularly focusing on smart contracts within the decentralized finance (DeFi) ecosystem.
@@ -26,10 +16,12 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 
 We built our project, VeriZK, using Sindri with the Noir proving system, combining AI and Web3 technologies for smart contract verification while preserving privacy. Sindri's streamlined tooling and scalability, integrated with Noir, allowed us to create a unique solution. Developers upload code privately, generating Zero-Knowledge Proofs (ZK proofs), ensuring contract authenticity. This innovative use of zkML technology is at the heart of VeriZK's success. 
 
-## Source Code
+# Instructions:
 
-The source code for VeriZK can be found in this repository. 
-
-## Created at
-
-Circuit Breaker Hackathon
+```
+cd frontend
+yarn install
+yarn chain
+yarn deploy
+yarn start
+```
