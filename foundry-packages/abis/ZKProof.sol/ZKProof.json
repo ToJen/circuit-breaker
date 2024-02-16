@@ -1,0 +1,496 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_bytecode",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "isProven",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "prove",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5060405161019938038061019983398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b610106806100936000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806345152ae3146037578063ca5b4778146075575b600080fd5b6000805473ffffffffffffffffffffffffffffffffffffffff1681526001602052604090205460ff165b604051901515815260200160405180910390f35b606160803660046095565b60016020526000908152604090205460ff1681565b60006020828403121560a657600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811460c957600080fd5b939250505056fea26469706673582212201ee195998fd5925f4889cc473f8a2304803b1f6e1e95aafca9c905334438efeb64736f6c63430008150033",
+    "sourceMap": "65:256:22:-:0;;;157:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;198:8;:20;;-1:-1:-1;;;;;;198:20:22;-1:-1:-1;;;;;198:20:22;;;;;;;;;;65:256;;14:290:24;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:24;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:24:o;:::-;65:256:22;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806345152ae3146037578063ca5b4778146075575b600080fd5b6000805473ffffffffffffffffffffffffffffffffffffffff1681526001602052604090205460ff165b604051901515815260200160405180910390f35b606160803660046095565b60016020526000908152604090205460ff1681565b60006020828403121560a657600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811460c957600080fd5b939250505056fea26469706673582212201ee195998fd5925f4889cc473f8a2304803b1f6e1e95aafca9c905334438efeb64736f6c63430008150033",
+    "sourceMap": "65:256:22:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;231:88;271:4;303:8;;;;294:18;;:8;:18;;;;;;;;231:88;;;179:14:24;;172:22;154:41;;142:2;127:18;231:88:22;;;;;;;110:40;;;;;;:::i;:::-;;;;;;;;;;;;;;;;206:309:24;265:6;318:2;306:9;297:7;293:23;289:32;286:52;;;334:1;331;324:12;286:52;373:9;360:23;423:42;416:5;412:54;405:5;402:65;392:93;;481:1;478;471:12;392:93;504:5;206:309;-1:-1:-1;;;206:309:24:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "isProven(address)": "ca5b4778",
+    "prove()": "45152ae3"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bytecode\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"isProven\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"prove\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/ZKProof.sol\":\"ZKProof\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/ZKProof.sol\":{\"keccak256\":\"0x271dab8d6778e08eec9dc163ad022e536c10d90558a08038b613e8743d5901f6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5782505e6006db1d76d698877d0fda4124c3459d7c1b53f2f40f720dea72dd6f\",\"dweb:/ipfs/QmNg6uX9fFovchRcPHspZPwmwDKRxygym6HBFdUxKZfAGc\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_bytecode",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isProven",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "prove",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/ZKProof.sol": "ZKProof"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/ZKProof.sol": {
+        "keccak256": "0x271dab8d6778e08eec9dc163ad022e536c10d90558a08038b613e8743d5901f6",
+        "urls": [
+          "bzz-raw://5782505e6006db1d76d698877d0fda4124c3459d7c1b53f2f40f720dea72dd6f",
+          "dweb:/ipfs/QmNg6uX9fFovchRcPHspZPwmwDKRxygym6HBFdUxKZfAGc"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/ZKProof.sol",
+    "id": 45024,
+    "exportedSymbols": {
+      "ZKProof": [
+        45023
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:283:22",
+    "nodes": [
+      {
+        "id": 44996,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:22",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ]
+      },
+      {
+        "id": 45023,
+        "nodeType": "ContractDefinition",
+        "src": "65:256:22",
+        "nodes": [
+          {
+            "id": 44998,
+            "nodeType": "VariableDeclaration",
+            "src": "88:16:22",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "bytecode",
+            "nameLocation": "96:8:22",
+            "scope": 45023,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 44997,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "88:7:22",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 45002,
+            "nodeType": "VariableDeclaration",
+            "src": "110:40:22",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "ca5b4778",
+            "mutability": "mutable",
+            "name": "isProven",
+            "nameLocation": "142:8:22",
+            "scope": 45023,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 45001,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 44999,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "118:7:22",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "110:24:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 45000,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "129:4:22",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 45012,
+            "nodeType": "FunctionDefinition",
+            "src": "157:68:22",
+            "nodes": [],
+            "body": {
+              "id": 45011,
+              "nodeType": "Block",
+              "src": "188:37:22",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 45009,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 45007,
+                      "name": "bytecode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44998,
+                      "src": "198:8:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 45008,
+                      "name": "_bytecode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45004,
+                      "src": "209:9:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "198:20:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 45010,
+                  "nodeType": "ExpressionStatement",
+                  "src": "198:20:22"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 45005,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45004,
+                  "mutability": "mutable",
+                  "name": "_bytecode",
+                  "nameLocation": "177:9:22",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45012,
+                  "src": "169:17:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45003,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "169:7:22",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "168:19:22"
+            },
+            "returnParameters": {
+              "id": 45006,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "188:0:22"
+            },
+            "scope": 45023,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 45022,
+            "nodeType": "FunctionDefinition",
+            "src": "231:88:22",
+            "nodes": [],
+            "body": {
+              "id": 45021,
+              "nodeType": "Block",
+              "src": "277:42:22",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "id": 45017,
+                      "name": "isProven",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45002,
+                      "src": "294:8:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                        "typeString": "mapping(address => bool)"
+                      }
+                    },
+                    "id": 45019,
+                    "indexExpression": {
+                      "id": 45018,
+                      "name": "bytecode",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44998,
+                      "src": "303:8:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "294:18:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 45016,
+                  "id": 45020,
+                  "nodeType": "Return",
+                  "src": "287:25:22"
+                }
+              ]
+            },
+            "functionSelector": "45152ae3",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "prove",
+            "nameLocation": "240:5:22",
+            "parameters": {
+              "id": 45013,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "245:2:22"
+            },
+            "returnParameters": {
+              "id": 45016,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45015,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45022,
+                  "src": "271:4:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 45014,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "271:4:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "270:6:22"
+            },
+            "scope": 45023,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ZKProof",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          45023
+        ],
+        "name": "ZKProof",
+        "nameLocation": "74:7:22",
+        "scope": 45024,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 22
+}
