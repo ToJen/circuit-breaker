@@ -16,13 +16,13 @@ mainnet = "https://eth-mainnet.alchemyapi.io/v2/${ETH_MAINNET_URL}"
 goerli = "https://rpc.ankr.com/eth_goerli"
 polygon = "https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
 polygonMumbai = "https://rpc.ankr.com/polygon_mumbai"
-scrollTestnet=""
+scrollSepolia = "https://rpc.ankr.com/scroll_sepolia_testnet"
 
 
 [etherscan]
 goerli = { key = "${ETHERSCAN_API_KEY}" }
 polygonMumbai = { key = "${ETHERSCAN_API_KEY}" }
-scrollTestnet = { key = "${ETHERSCAN_API_KEY}" }
+scrollSepolia = { key = "${ETHERSCAN_API_KEY}" , url = "https://api-sepolia.scrollscan.dev/api" }
 
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
