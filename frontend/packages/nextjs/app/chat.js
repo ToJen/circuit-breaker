@@ -70,7 +70,7 @@ function App() {
   const [messages, setMessages] = useState([
     {
       message:
-        "Hello, Veribot here! I'm your personal ZKML smart contract verification assistant. 😄 What contracts do you want to verify or check today?",
+        "Hello, VeriBot here! I'm your personal ZKML smart contract verification assistant. 😄 What contracts do you want to verify or check today?",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -247,7 +247,7 @@ function App() {
           <ChatContainer>
             <ConversationHeader>
               <Avatar
-                src="https://static.vecteezy.com/system/resources/previews/004/619/774/original/laughing-robot-emoji-color-icon-happy-chatbot-smiley-with-broad-smile-and-closed-eyes-chat-bot-emoticon-artificial-conversational-entity-virtual-assistant-isolated-illustration-vector.jpg"
+                src="https://github.com/ToJen/circuit-breaker/raw/main/docs/LOGO.png"
                 name="Emily"
               />
               <ConversationHeader.Content userName="VeriBot" info="🟢 Active now" />
