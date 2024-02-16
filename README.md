@@ -56,6 +56,15 @@ forge verify-contract \
 
 # Instructions:
 
+1. Add 
+```
+NEXT_PUBLIC_OPENAI_API_KEY=sk-...
+```
+
+to frontend/packages/nextjs/.env.local
+
+2. 
+
 ```
 cd frontend
 yarn install
