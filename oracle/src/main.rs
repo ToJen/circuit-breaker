@@ -79,6 +79,7 @@ fn exec_python_model(bytecode: &str) -> Result<InferenceResponse, Box<dyn Error>
 
     if !output.status.success() {
         let error_message = String::from_utf8(output.stderr)?;
+        eprintln!("Command failed with error: {}", error_message);
         return Err(error_message.into());
     }
 
