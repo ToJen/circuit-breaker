@@ -17,7 +17,11 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 
 import OpenAI from "openai";
+import SindriClient from "sindri";
 import { useState } from "react";
+
+// import { Client, HTTPTransport, RequestManager } from "@open-rpc/client-js";
+
 
 const API_KEY = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 const openai = new OpenAI({ apiKey: API_KEY, dangerouslyAllowBrowser: true });
@@ -48,36 +52,83 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 - **Machine Learning**: Analyzes smart contract bytecode to infer properties or vulnerabilities, acting as a privacy-preserving tool that abstracts complex contract logic for secure validation.`,
 };
 
-async function verifySmartContract(contractAddress) {
-  // Placeholder: In a real implementation, you might fetch the contract's source code
-  // from a blockchain explorer API or use a service that verifies contract code.
-
-  alert(`Verifying contract at address: ${contractAddress}`);
-
-  // Simulate a verification process
-  const isVerified = true; // This would be the result of the verification process
-
-  if (isVerified) {
-    console.log(`Contract at address ${contractAddress} is verified.`);
-  } else {
-    console.log(`Contract at address ${contractAddress} could not be verified.`);
-  }
-
-  return `Contract at address ${contractAddress} is verified.`;
-}
-
-async function checkSmartContractSafety(bytecode) {
-  // Placeholder: In reality, you would likely call an external API or use a library
+async function verifySmartContract(bytecode) {
+    // Placeholder: In reality, you would likely call an external API or use a library
   // that analyzes the contract's bytecode for known vulnerabilities.
 
   alert(`Checking safety of contract with bytecode: ${bytecode}`);
 
+
+  // mock report = true;
+  // const transport = new HTTPTransport("http://localhost:8000");
+  // const client = new Client(new RequestManager([transport]));
+
+  // const request = {
+  //   jsonrpc: "2.0",
+  //   id: 0,
+  //   method: "inference",
+  //   params: "0xbytecode"
+  // };
+
+  // const result = await client.request(request);
+  // console.log(result);
+
   // Simulate a safety check process
   const isSafe = true; // This would be determined by the safety check process
 
-  // mock report = true;
+  // alert("before sindri client");
 
-  return `Smart contract bytecode is considered safe.`;
+  
+  const _ = SindriClient.authorize({ apiKey: 'sindri-qxaFOjmwZlNId0O1jNp51r3O4p8nUj8O-ZkEy' });
+
+  // alert("after sindri client");
+
+  // const url = 'https://sindri.app/api/v1/circuit/list';
+  // const options = {
+  //   method: 'GET',
+  //   headers: {
+  //     'Accept': 'application/json',
+  //     'Authorization': 'Bearer sindri-qxaFOjmwZlNId0O1jNp51r3O4p8nUj8O-ZkEy'
+  //   }
+  // };
+
+  // await fetch(url, options)
+  //   .then(response => response.json())
+  //   .then(data => console.log("circuits", data))
+  //   .catch(error => console.error('Error:', error));
+
+
+
+  // const circuits = await SindriClient.getAllCircuits();
+  // alert("Circuits:", circuits.json());
+  // console.log(circuits.json());
+  // const circuitId = circuits[0]
+  const circuitId = "8e3d2e13-74d5-4c8d-8e81-0c90ee416afc";
+  alert("Generating proof using Sindri Circuit... This may take up to 30s.")
+  const proof = await SindriClient.proveCircuit(circuitId, '"oracle_output"=true\n');
+  console.log("proof", proof);
+
+  try {
+    const jsonString = JSON.stringify(proof);
+    console.log("jsonString", jsonString)
+    alert("Generated proof! ", jsonString);
+  } catch (error) {
+      alert("Error: Unable to stringify object.");
+  }
+
+  return `Smart contract bytecode is considered safe. Proof: ${proof.proof.proof}.`;
+
+}
+
+async function checkSmartContractSafety(proof) {
+  // Placeholder: In a real implementation, you might fetch the contract's source code
+  // from a blockchain explorer API or use a service that verifies contract code.
+
+  alert(`Verifying contract with proof: ${proof}`);
+
+  // Simulate a verification process
+  const isVerified = true; // This would be the result of the verification process
+  return `Proof ${proof} is verified.`;
 }
 
 function App() {
@@ -132,7 +183,7 @@ function App() {
         type: "function",
         function: {
           name: "verify_smart_contract",
-          description: "Verify the code of a given smart contract bytecode",
+          description: "Verify the code of a given smart contract bytecode by generating a ZKML proof",
           parameters: {
             type: "object",
             properties: {

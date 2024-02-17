@@ -46,6 +46,7 @@
     "cheerio": "^1.0.0-rc.12",
     "github-scraper": "^7.1.1",
     "openai": "^4.28.0",
+    "sindri": "^0.0.1-alpha.30",
     "usehooks-ts": "^2.14.0"
   }
 }
