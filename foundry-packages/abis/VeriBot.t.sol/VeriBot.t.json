@@ -1,0 +1,21 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "test/VeriBot.t.sol",
+    "id": 41769,
+    "exportedSymbols": {},
+    "nodeType": "SourceUnit",
+    "src": "208:0:19",
+    "nodes": [],
+    "license": "UNLICENSED"
+  },
+  "id": 19
+}

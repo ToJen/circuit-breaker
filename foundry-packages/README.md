@@ -3,18 +3,18 @@
 
 ## Scroll verification 
 
-### ZKPROOF.SOL 
+### VeriBot 
 
-```
-forge verify-contract \
-    --num-of-optimizations 1000000 \
-    --watch \
-    --constructor-args  $(cast abi-encode "constructor(address)" 0x14299C00861767244D552B206dd9217EafA0196b) \
-    --verifier etherscan \
-    --verifier-url https://api-sepolia.scrollscan.dev/api \
-    --etherscan-api-key EBZA9XDYA7MYMI5ZYV11M9DUB4XDB1E484 \
-    --compiler-version v0.8.20 \
-    0x83bf8975F4B1B99969B5134f86E5bd683DCf5aFc \
-    ZKProof 
-``` 
+
+
+VeriBot contract is deployed on Sepolia Scroll Testnet and is verified : 
+https://sepolia.scrollscan.dev/address/0xc7c63d31808d12b1b4befd37cfccd461e9ca6f30
+
+
+forge verify-contract 0xc7c63d31808D12b1b4BEfd37CFccd461e9CA6F30 VeriBot \
+  --verifier-url https://api-sepolia.scrollscan.com/api \
+  --etherscan-api-key STQXXFDG565J54MYRQ4P1YYCY558TRA1P9 
+  
+
+
 

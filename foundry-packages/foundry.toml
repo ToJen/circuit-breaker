@@ -3,7 +3,8 @@ src = "src"
 out = "abis"
 libs = ["lib"]
 via-ir=false
-optimizer_runs = 1000000
+optimizer_runs = 200
+auto_detect_solc=true
 gas_reports = ["*"]
 
 [rpc_endpoints]
