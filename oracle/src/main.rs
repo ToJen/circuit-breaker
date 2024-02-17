@@ -4,7 +4,6 @@ use serde::{Deserialize, Serialize};
 use serde_json::json;
 use std::error::Error;
 use std::process::{Command, Output};
-use std::sync::Arc;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct RpcRequest {
@@ -29,8 +28,6 @@ struct RpcError {
 async fn rpc_handler(body: web::Json<RpcRequest>) -> Result<HttpResponse, ActixError> {
     match body.method.as_str() {
         "inference" => {
-            // Simulate calling the inference method
-            // This part should be replaced with your actual logic to call the inference function
             let result = exec_python_model(body.params.get("bytecode").and_then(|v| v.as_str()).unwrap_or_default());
 
             match result {
@@ -72,17 +69,36 @@ async fn rpc_handler(body: web::Json<RpcRequest>) -> Result<HttpResponse, ActixE
 }
 
 fn exec_python_model(bytecode: &str) -> Result<InferenceResponse, Box<dyn Error>> {
-    let output: Output = Command::new("python")
+    // Attempt to execute the command with "python"
+    let output = Command::new("python")
         .arg("../ml/main.py")
         .arg(bytecode)
-        .output()?;
+        .output();
 
-    if !output.status.success() {
-        let error_message = String::from_utf8(output.stderr)?;
-        eprintln!("Command failed with error: {}", error_message);
-        return Err(error_message.into());
-    }
+    let output = match output {
+        Ok(output) if output.status.success() => output,
+        _ => {
+            // If the first attempt fails, try with "python3"
+            println!("Attempting with python3...");
+            let output_python3 = Command::new("python3")
+                .arg("../ml/main.py")
+                .arg(bytecode)
+                .output();
+                
+            match output_python3 {
+                Ok(output) if output.status.success() => output,
+                Ok(output) => {
+                    // If the command with "python3" also fails, return an error
+                    let error_message = String::from_utf8_lossy(&output.stderr).into_owned();
+                    eprintln!("Command failed with error: {}", error_message);
+                    return Err(error_message.into());
+                },
+                Err(e) => return Err(e.into()), // Handle unexpected errors during command execution
+            }
+        }
+    };
 
+    // If execution is successful (with either "python" or "python3"), parse the output
     let output_str = String::from_utf8(output.stdout)?;
     let parsed: InferenceResponse = serde_json::from_str(&output_str)?;
     Ok(parsed)

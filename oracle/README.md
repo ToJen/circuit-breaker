@@ -12,7 +12,8 @@
 ## Run
 - `cargo run`
 
-## Oracle Request
+## Usage
+### Oracle Request
 ```http
 POST http://localhost:8000/api
 
@@ -21,6 +22,18 @@ POST http://localhost:8000/api
     "id": 0,
     "method": "inference",
     "params": "0xbytecode"
+}
+```
+
+### Oracle Response
+```json
+{
+    "result": {
+        "report": true,
+        "result": 100.0
+    },
+    "error": null,
+    "id": 0
 }
 ```
 
