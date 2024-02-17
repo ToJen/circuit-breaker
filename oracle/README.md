@@ -11,3 +11,16 @@
 
 ## Run
 - `cargo run`
+
+## Oracle Request
+```http
+POST http://localhost:8000/api
+
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "inference",
+    "params": "0xbytecode"
+}
+```
+

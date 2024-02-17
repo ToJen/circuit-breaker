@@ -101,3 +101,17 @@ yarn chain
 yarn deploy
 yarn start
 ```
+
+# Happy Path Conversation:
+```
+- user: i want to verify that a contract is not vulnerable but i don't have the source code
+- bot: that's fine, send me the bytecode
+- user: here's the bytecode
+- system: call oracle function with bytecode and receives JSON object response
+- system: call sindri function with oracle JSON output and receive zk Proof
+- bot: here is the zk proof that it's safe
+- user: cool, i'd like to verify this
+- system: call blockchain function with zkProof to contract on Scroll and receive true or false
+- bot: yes it's verified that the proof is correct that there's no vulnerability in the code
+```
+
