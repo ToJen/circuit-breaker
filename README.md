@@ -22,7 +22,7 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 
 ## Architecture 
 
-<img src="./docs/architecture.png" alt="Logo" width="700" />
+<img src="./docs/Diagram.png" alt="Logo" width="700" />
 
 
 - **Circuit** : Utilizes Zero-Knowledge Proofs in [Noir Language](https://noir-lang.org/docs/getting_started/installation/) to validate machine learning inferences on smart contract bytecode, ensuring privacy and integrity without revealing the bytecode.
@@ -34,6 +34,9 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 We are generating off-chain proofs using Sindri. 
 
 
+<img src="./docs/Diagram2.png" alt="Logo" width="200" />
+
+
 # Technologies Used
 
 
@@ -42,10 +45,13 @@ We are generating off-chain proofs using Sindri.
 
 ## AZTEC 
 
-Noir Language is used to .. 
+Noir Language is used to verify the proofs. We are using the function verify from the plonk ```BaseUltraVerifier``` contract. 
 
 #### Feedback 
 
+The contract created should use functions from the circuit. We suggest the AZTEC team to add in the CLI : 
+
+- ```--out``` : specify path where the plonk verifier is generated. 
 
 ## SINDRI 
 
@@ -63,16 +69,7 @@ We have created a contract through NOIR by running nargo prove and this contract
 #### Feedback using Foundry 
 - Custom verification of smart contracts using Foundry : after deploying contracts, verification process is as follow :
 ```
-forge verify-contract \
-    --num-of-optimizations 10 \
-    --watch \
-    --constructor-args  $(cast abi-encode "constructor(address)" 0x14299C00861767244D552B206dd9217EafA0196b) \
-    --verifier etherscan \
-    --verifier-url https://api-sepolia.scrollscan.dev/api \
-    --etherscan-api-key V4P48P91YBYEK963CWQKM9G3YTTJRKJA8Y \
-    --compiler-version v0.8.20+commit.a1b79de6 \
-    0x703936A24DFaDcD34008Db338FDB087c43C8c56a \
-    ZKProof 
+
     
 ``` 
 #### Feedback 
