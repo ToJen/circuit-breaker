@@ -22,7 +22,6 @@ import { useState } from "react";
 
 // import { Client, HTTPTransport, RequestManager } from "@open-rpc/client-js";
 
-
 const API_KEY = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 const openai = new OpenAI({ apiKey: API_KEY, dangerouslyAllowBrowser: true });
 
@@ -52,7 +51,35 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 - **Machine Learning**: Analyzes smart contract bytecode to infer properties or vulnerabilities, acting as a privacy-preserving tool that abstracts complex contract logic for secure validation.`,
 };
 
-async function verifySmartContract(bytecode) {
+
+
+async function checkSmartContractSafety(proof) {
+  // Placeholder: In a real implementation, you might fetch the contract's source code
+  // from a blockchain explorer API or use a service that verifies contract code.
+
+  alert(`Verifying contract with proof: ${proof}`);
+
+  // Simulate a verification process
+  const isVerified = true; // This would be the result of the verification process
+  return `Proof ${proof} is verified.`;
+}
+
+function App() {
+  const [messages, setMessages] = useState([
+    {
+      message:
+        "Hello, VeriBot here! I'm your personal ZKML smart contract verification assistant. 😄 What contracts do you want to verify or check today?",
+      sentTime: "just now",
+      sender: "ChatGPT",
+    },
+  ]);
+  const [isTyping, setIsTyping] = useState(false);
+
+  const [proof, setProof] = useState(null); // Add this line for the proof state
+  const [proofString, setProofString] = useState(""); // Add this line for the proof state
+
+
+  async function verifySmartContract(bytecode) {
     // Placeholder: In reality, you would likely call an external API or use a library
   // that analyzes the contract's bytecode for known vulnerabilities.
 
@@ -107,6 +134,12 @@ async function verifySmartContract(bytecode) {
   alert("Generating proof using Sindri Circuit... This may take up to 30s.")
   const proof = await SindriClient.proveCircuit(circuitId, '"oracle_output"=true\n');
   console.log("proof", proof);
+  const result = proof.proof.proof;
+  setProofString(proof.proof.proof);
+
+  const shortProof = proof;
+  delete shortProof.proof;
+  setProof(shortProof);
 
   try {
     alert(`Generated proof! ${JSON.stringify(proof)}`);
@@ -114,32 +147,9 @@ async function verifySmartContract(bytecode) {
       alert("Error: Unable to stringify object.");
   }
 
-  return `Smart contract bytecode is considered safe. Proof: ${proof.proof.proof}.`;
+  return `The bytecode has been verified the oracle and a proof has been generated. The bytecode is safe. The proof can be found below the chat.`;
 
 }
-
-async function checkSmartContractSafety(proof) {
-  // Placeholder: In a real implementation, you might fetch the contract's source code
-  // from a blockchain explorer API or use a service that verifies contract code.
-
-  alert(`Verifying contract with proof: ${proof}`);
-
-  // Simulate a verification process
-  const isVerified = true; // This would be the result of the verification process
-  return `Proof ${proof} is verified.`;
-}
-
-function App() {
-  const [messages, setMessages] = useState([
-    {
-      message:
-        "Hello, VeriBot here! I'm your personal ZKML smart contract verification assistant. 😄 What contracts do you want to verify or check today?",
-      sentTime: "just now",
-      sender: "ChatGPT",
-    },
-  ]);
-  const [isTyping, setIsTyping] = useState(false);
-
   const handleSend = async message => {
     const newMessage = {
       message,
@@ -332,6 +342,25 @@ function App() {
           </ChatContainer>
         </MainContainer>
       </div>
+      {proof && (
+  <div style={{ textAlign: 'left' }}>
+        <p>Last Generated Proof:</p>
+
+    <p>Proof String: {proofString.slice(0,100)}...</p>
+    <button onClick={() => {
+      navigator.clipboard.writeText(proofString);
+      alert("Proof copied to clipboard!")
+      }}
+>Copy Full Proof to Clipboard</button>
+<br />
+<br />
+    <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+      {JSON.stringify(proof, null, 2)}
+    </pre>
+    
+  </div>
+)}
+
     </div>
   );
 }
