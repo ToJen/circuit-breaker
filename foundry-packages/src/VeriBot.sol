@@ -16,7 +16,7 @@ contract VeriBot {
             return proofs[proofId];
         }
 
-        // Verify the proof 
+        // // Verify the proof
         bool verified = plonkVerifier.verify(_proof, _publicInputs);
 
         // If verified, mark this proof as verified to prevent future submissions
