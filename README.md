@@ -22,7 +22,7 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 
 ## Architecture 
 
-<img src="./docs/Diagram.png" alt="Logo" width="700" />
+<img src="./docs/architecture.png" alt="Logo" width="700" />
 
 
 - **Circuit** : Utilizes Zero-Knowledge Proofs in [Noir Language](https://noir-lang.org/docs/getting_started/installation/) to validate machine learning inferences on smart contract bytecode, ensuring privacy and integrity without revealing the bytecode.
