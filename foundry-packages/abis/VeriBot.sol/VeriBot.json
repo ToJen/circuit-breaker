@@ -1,0 +1,870 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "plonkVerifier",
+      "outputs": [
+        {
+          "internalType": "contract BaseUltraVerifier",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "proofs",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_proof",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_publicInputs",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "verifyProof",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b506104c2806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063444d95b014610046578063bbcb7c741461007e578063e4886e5014610091575b600080fd5b61006961005436600461020e565b60016020526000908152604090205460ff1681565b60405190151581526020015b60405180910390f35b61006961008c366004610256565b6100d6565b6000546100b19073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610075565b6000808484846040516020016100ee9392919061038b565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0818403018152908290528051602090910120600080547fea50d0e40000000000000000000000000000000000000000000000000000000084529193509173ffffffffffffffffffffffffffffffffffffffff9091169063ea50d0e490610181908990899089906004016103cc565b602060405180830381865afa15801561019e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101c29190610463565b9050801561020557600082815260016020819052604090912080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690911790555b95945050505050565b60006020828403121561022057600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060006040848603121561026b57600080fd5b833567ffffffffffffffff8082111561028357600080fd5b818601915086601f83011261029757600080fd5b8135818111156102a657600080fd5b602088818386010111156102b957600080fd5b8084019650819550808801359350828411156102d457600080fd5b838801935088601f8501126102e857600080fd5b83359150828211156102fc576102fc610227565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f8301168101818110868211171561033f5761033f610227565b60405292835281830193508481018201928a84111561035d57600080fd5b948201945b8386101561037b57853585529482019493820193610362565b8096505050505050509250925092565b828482376000818401818152835160209190828601845b828110156103be578151845292840192908401906001016103a2565b509198975050505050505050565b604081528260408201528284606083013760006060848301015260007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8501168201606081016020606085840301818601528186518084526080850191508288019450600093505b808410156104565784518252938201936001939093019290820190610436565b5098975050505050505050565b60006020828403121561047557600080fd5b8151801515811461048557600080fd5b939250505056fea2646970667358221220fae88a15a2ddf1e31cd6bb9a354e7429e633da0a7fe04f4220c02b4ce56cf7a564736f6c63430008150033",
+    "sourceMap": "116:672:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063444d95b014610046578063bbcb7c741461007e578063e4886e5014610091575b600080fd5b61006961005436600461020e565b60016020526000908152604090205460ff1681565b60405190151581526020015b60405180910390f35b61006961008c366004610256565b6100d6565b6000546100b19073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610075565b6000808484846040516020016100ee9392919061038b565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0818403018152908290528051602090910120600080547fea50d0e40000000000000000000000000000000000000000000000000000000084529193509173ffffffffffffffffffffffffffffffffffffffff9091169063ea50d0e490610181908990899089906004016103cc565b602060405180830381865afa15801561019e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101c29190610463565b9050801561020557600082815260016020819052604090912080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690911790555b95945050505050565b60006020828403121561022057600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060006040848603121561026b57600080fd5b833567ffffffffffffffff8082111561028357600080fd5b818601915086601f83011261029757600080fd5b8135818111156102a657600080fd5b602088818386010111156102b957600080fd5b8084019650819550808801359350828411156102d457600080fd5b838801935088601f8501126102e857600080fd5b83359150828211156102fc576102fc610227565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f8301168101818110868211171561033f5761033f610227565b60405292835281830193508481018201928a84111561035d57600080fd5b948201945b8386101561037b57853585529482019493820193610362565b8096505050505050509250925092565b828482376000818401818152835160209190828601845b828110156103be578151845292840192908401906001016103a2565b509198975050505050505050565b604081528260408201528284606083013760006060848301015260007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8501168201606081016020606085840301818601528186518084526080850191508288019450600093505b808410156104565784518252938201936001939093019290820190610436565b5098975050505050505050565b60006020828403121561047557600080fd5b8151801515811461048557600080fd5b939250505056fea2646970667358221220fae88a15a2ddf1e31cd6bb9a354e7429e633da0a7fe04f4220c02b4ce56cf7a564736f6c63430008150033",
+    "sourceMap": "116:672:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;184:38;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;364:14:2;;357:22;339:41;;327:2;312:18;184:38:0;;;;;;;;229:557;;;;;;:::i;:::-;;:::i;139:38::-;;;;;;;;;;;;2410:42:2;2398:55;;;2380:74;;2368:2;2353:18;139:38:0;2209:251:2;229:557:0;321:4;337:15;382:6;;390:13;365:39;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;355:50;;365:39;355:50;;;;541:13;557;;:43;;;355:50;;-1:-1:-1;541:13:0;557;;;;;:20;;:43;;578:6;;;;586:13;;557:43;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;541:59;;697:8;693:61;;;721:15;;;;739:4;721:15;;;;;;;;:22;;;;;;;;;693:61;771:8;229:557;-1:-1:-1;;;;;229:557:0:o;14:180:2:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:2;;14:180;-1:-1:-1;14:180:2:o;391:184::-;443:77;440:1;433:88;540:4;537:1;530:15;564:4;561:1;554:15;580:1624;684:6;692;700;753:2;741:9;732:7;728:23;724:32;721:52;;;769:1;766;759:12;721:52;809:9;796:23;838:18;879:2;871:6;868:14;865:34;;;895:1;892;885:12;865:34;933:6;922:9;918:22;908:32;;978:7;971:4;967:2;963:13;959:27;949:55;;1000:1;997;990:12;949:55;1040:2;1027:16;1066:2;1058:6;1055:14;1052:34;;;1082:1;1079;1072:12;1052:34;1105:4;1150:7;1145:2;1136:6;1132:2;1128:15;1124:24;1121:37;1118:57;;;1171:1;1168;1161:12;1118:57;1202:2;1198;1194:11;1184:21;;1224:6;1214:16;;1283:2;1272:9;1268:18;1255:32;1239:48;;1312:2;1302:8;1299:16;1296:36;;;1328:1;1325;1318:12;1296:36;1366:8;1355:9;1351:24;1341:34;;1413:7;1406:4;1402:2;1398:13;1394:27;1384:55;;1435:1;1432;1425:12;1384:55;1471:2;1458:16;1448:26;;1493:2;1489;1486:10;1483:36;;;1499:18;;:::i;:::-;1545:2;1542:1;1538:10;1577:2;1571:9;1636:66;1631:2;1627;1623:11;1619:84;1611:6;1607:97;1754:6;1742:10;1739:22;1734:2;1722:10;1719:18;1716:46;1713:72;;;1765:18;;:::i;:::-;1801:2;1794:22;1851:18;;;1885:15;;;;-1:-1:-1;1927:11:2;;;1923:20;;;1955:19;;;1952:39;;;1987:1;1984;1977:12;1952:39;2011:11;;;;2031:142;2047:6;2042:3;2039:15;2031:142;;;2113:17;;2101:30;;2064:12;;;;2151;;;;2031:142;;;2192:6;2182:16;;;;;;;;580:1624;;;;;:::o;2465:696::-;2726:6;2718;2713:3;2700:33;2682:3;2752:16;;;2777:13;;;2837;;2889:4;;2752:16;2916:15;;;2682:3;2959:175;2973:6;2970:1;2967:13;2959:175;;;3036:13;;3022:28;;3072:14;;;;3109:15;;;;2995:1;2988:9;2959:175;;;-1:-1:-1;3150:5:2;;2465:696;-1:-1:-1;;;;;;;;2465:696:2:o;3166:1006::-;3401:2;3390:9;3383:21;3440:6;3435:2;3424:9;3420:18;3413:34;3497:6;3489;3484:2;3473:9;3469:18;3456:48;3553:1;3548:2;3539:6;3528:9;3524:22;3520:31;3513:42;3364:4;3610:66;3605:2;3597:6;3593:15;3589:88;3578:9;3574:104;3706:2;3702;3698:11;3728:4;3792:2;3780:9;3776:2;3772:18;3768:27;3763:2;3752:9;3748:18;3741:55;3816:3;3848:6;3842:13;3876:6;3871:3;3864:19;3907:3;3903:2;3899:12;3892:19;;3946:2;3938:6;3934:15;3920:29;;3967:1;3958:10;;3977:169;3991:6;3988:1;3985:13;3977:169;;;4052:13;;4040:26;;4121:15;;;;4013:1;4006:9;;;;;4086:12;;;;3977:169;;;-1:-1:-1;4163:3:2;3166:1006;-1:-1:-1;;;;;;;;3166:1006:2:o;4177:277::-;4244:6;4297:2;4285:9;4276:7;4272:23;4268:32;4265:52;;;4313:1;4310;4303:12;4265:52;4345:9;4339:16;4398:5;4391:13;4384:21;4377:5;4374:32;4364:60;;4420:1;4417;4410:12;4364:60;4443:5;4177:277;-1:-1:-1;;;4177:277:2:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "plonkVerifier()": "e4886e50",
+    "proofs(bytes32)": "444d95b0",
+    "verifyProof(bytes,bytes32[])": "bbcb7c74"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"plonkVerifier\",\"outputs\":[{\"internalType\":\"contract BaseUltraVerifier\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"proofs\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_proof\",\"type\":\"bytes\"},{\"internalType\":\"bytes32[]\",\"name\":\"_publicInputs\",\"type\":\"bytes32[]\"}],\"name\":\"verifyProof\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/VeriBot.sol\":\"VeriBot\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/VeriBot.sol\":{\"keccak256\":\"0x987878ca531bcdb680b441bb404218175c222e3c5b2fdf02ef53a99b7eb1f2fc\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://3f9b1eb20f7bcde94983a273d3f2594b9df4894390bb67312c1d9ccc175b83d0\",\"dweb:/ipfs/QmcPqK1wfwa4ZHgzb2VT9GNPr5JRr9M9GqW3nZRooJrsbu\"]},\"src/plonk_vk.sol\":{\"keccak256\":\"0xa36bcb3f926569c5af46d2f0812c3b9cb10aed362e9cc048b9e523bd5db6c362\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f712be3e911244d52569f197866054e43a7a23ffd5bb299a3b1eb74692ba3c0b\",\"dweb:/ipfs/QmZ4dDL4jyhLVFsSk1TRg5Z7FjS4RJPdmGykqmGNwuo3cA\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "plonkVerifier",
+          "outputs": [
+            {
+              "internalType": "contract BaseUltraVerifier",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "proofs",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "_proof",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes32[]",
+              "name": "_publicInputs",
+              "type": "bytes32[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "verifyProof",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/VeriBot.sol": "VeriBot"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/VeriBot.sol": {
+        "keccak256": "0x987878ca531bcdb680b441bb404218175c222e3c5b2fdf02ef53a99b7eb1f2fc",
+        "urls": [
+          "bzz-raw://3f9b1eb20f7bcde94983a273d3f2594b9df4894390bb67312c1d9ccc175b83d0",
+          "dweb:/ipfs/QmcPqK1wfwa4ZHgzb2VT9GNPr5JRr9M9GqW3nZRooJrsbu"
+        ],
+        "license": "UNLICENSED"
+      },
+      "src/plonk_vk.sol": {
+        "keccak256": "0xa36bcb3f926569c5af46d2f0812c3b9cb10aed362e9cc048b9e523bd5db6c362",
+        "urls": [
+          "bzz-raw://f712be3e911244d52569f197866054e43a7a23ffd5bb299a3b1eb74692ba3c0b",
+          "dweb:/ipfs/QmZ4dDL4jyhLVFsSk1TRg5Z7FjS4RJPdmGykqmGNwuo3cA"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/VeriBot.sol",
+    "id": 52,
+    "exportedSymbols": {
+      "BaseUltraVerifier": [
+        843
+      ],
+      "VeriBot": [
+        51
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:750:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:0",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "src": "65:49:0",
+        "nodes": [],
+        "absolutePath": "src/plonk_vk.sol",
+        "file": "./plonk_vk.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 52,
+        "sourceUnit": 876,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2,
+              "name": "BaseUltraVerifier",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 843,
+              "src": "73:17:0",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 51,
+        "nodeType": "ContractDefinition",
+        "src": "116:672:0",
+        "nodes": [
+          {
+            "id": 6,
+            "nodeType": "VariableDeclaration",
+            "src": "139:38:0",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "e4886e50",
+            "mutability": "mutable",
+            "name": "plonkVerifier",
+            "nameLocation": "164:13:0",
+            "scope": 51,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BaseUltraVerifier_$843",
+              "typeString": "contract BaseUltraVerifier"
+            },
+            "typeName": {
+              "id": 5,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 4,
+                "name": "BaseUltraVerifier",
+                "nameLocations": [
+                  "139:17:0"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 843,
+                "src": "139:17:0"
+              },
+              "referencedDeclaration": 843,
+              "src": "139:17:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseUltraVerifier_$843",
+                "typeString": "contract BaseUltraVerifier"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 10,
+            "nodeType": "VariableDeclaration",
+            "src": "184:38:0",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "444d95b0",
+            "mutability": "mutable",
+            "name": "proofs",
+            "nameLocation": "216:6:0",
+            "scope": 51,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 9,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 7,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "192:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "184:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 8,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 50,
+            "nodeType": "FunctionDefinition",
+            "src": "229:557:0",
+            "nodes": [],
+            "body": {
+              "id": 49,
+              "nodeType": "Block",
+              "src": "327:459:0",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    21
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 21,
+                      "mutability": "mutable",
+                      "name": "proofId",
+                      "nameLocation": "345:7:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 49,
+                      "src": "337:15:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 20,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "337:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 29,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 25,
+                            "name": "_proof",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12,
+                            "src": "382:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            }
+                          },
+                          {
+                            "id": 26,
+                            "name": "_publicInputs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 15,
+                            "src": "390:13:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                              "typeString": "bytes32[] memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            },
+                            {
+                              "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                              "typeString": "bytes32[] memory"
+                            }
+                          ],
+                          "expression": {
+                            "id": 23,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -1,
+                            "src": "365:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 24,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberLocation": "369:12:0",
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "src": "365:16:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 27,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "365:39:0",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 22,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -8,
+                      "src": "355:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "355:50:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "337:68:0"
+                },
+                {
+                  "assignments": [
+                    31
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 31,
+                      "mutability": "mutable",
+                      "name": "verified",
+                      "nameLocation": "546:8:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 49,
+                      "src": "541:13:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "typeName": {
+                        "id": 30,
+                        "name": "bool",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "541:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 37,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 34,
+                        "name": "_proof",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "578:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        }
+                      },
+                      {
+                        "id": 35,
+                        "name": "_publicInputs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "586:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                          "typeString": "bytes32[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                          "typeString": "bytes32[] memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 32,
+                        "name": "plonkVerifier",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "557:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BaseUltraVerifier_$843",
+                          "typeString": "contract BaseUltraVerifier"
+                        }
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "571:6:0",
+                      "memberName": "verify",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 842,
+                      "src": "557:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_bytes_memory_ptr_$_t_array$_t_bytes32_$dyn_memory_ptr_$returns$_t_bool_$",
+                        "typeString": "function (bytes memory,bytes32[] memory) view external returns (bool)"
+                      }
+                    },
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "557:43:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "541:59:0"
+                },
+                {
+                  "condition": {
+                    "id": 38,
+                    "name": "verified",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 31,
+                    "src": "697:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 46,
+                  "nodeType": "IfStatement",
+                  "src": "693:61:0",
+                  "trueBody": {
+                    "id": 45,
+                    "nodeType": "Block",
+                    "src": "707:47:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 43,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 39,
+                              "name": "proofs",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 10,
+                              "src": "721:6:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                                "typeString": "mapping(bytes32 => bool)"
+                              }
+                            },
+                            "id": 41,
+                            "indexExpression": {
+                              "id": 40,
+                              "name": "proofId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 21,
+                              "src": "728:7:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "721:15:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "hexValue": "74727565",
+                            "id": 42,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "739:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "721:22:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 44,
+                        "nodeType": "ExpressionStatement",
+                        "src": "721:22:0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "id": 47,
+                    "name": "verified",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 31,
+                    "src": "771:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 19,
+                  "id": 48,
+                  "nodeType": "Return",
+                  "src": "764:15:0"
+                }
+              ]
+            },
+            "functionSelector": "bbcb7c74",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyProof",
+            "nameLocation": "238:11:0",
+            "parameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "mutability": "mutable",
+                  "name": "_proof",
+                  "nameLocation": "265:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "250:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15,
+                  "mutability": "mutable",
+                  "name": "_publicInputs",
+                  "nameLocation": "290:13:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "273:30:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "273:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 14,
+                    "nodeType": "ArrayTypeName",
+                    "src": "273:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:55:0"
+            },
+            "returnParameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "321:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "320:6:0"
+            },
+            "scope": 51,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "VeriBot",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          51
+        ],
+        "name": "VeriBot",
+        "nameLocation": "125:7:0",
+        "scope": 52,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 0
+}
