@@ -44,6 +44,7 @@
     "antd": "^5.14.0",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
+    "ethers": "5.0.0",
     "github-scraper": "^7.1.1",
     "openai": "^4.28.0",
     "sindri": "^0.0.1-alpha.30",
