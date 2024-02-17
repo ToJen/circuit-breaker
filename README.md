@@ -31,10 +31,7 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 
 ## How it's Made
 
-We are generating off-chain proofs using Sindri. 
-
-
-<img src="./docs/Diagram2.png" alt="Logo" width="200" />
+We are generating off-chain proofs using Sindri. We are then 
 
 
 # Technologies Used
