@@ -109,9 +109,7 @@ async function verifySmartContract(bytecode) {
   console.log("proof", proof);
 
   try {
-    const jsonString = JSON.stringify(proof);
-    console.log("jsonString", jsonString)
-    alert("Generated proof! ", jsonString);
+    alert(`Generated proof! ${JSON.stringify(proof)}`);
   } catch (error) {
       alert("Error: Unable to stringify object.");
   }
