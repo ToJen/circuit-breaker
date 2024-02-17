@@ -1,4 +1,4 @@
-# VeriZK
+# VeriBot
 
 
 <img src="./docs/LOGO.png" alt="Logo" width="200" />
@@ -6,10 +6,15 @@
 
 ## TL;DR: 
 
+
 - VeriZK uses Zero-Knowledge Proofs and Machine Learning to certify smart contract security in the DeFi ecosystem without exposing source code, targeting developers who prioritize both privacy and integrity.
 - Our **Goal** is to : use zkML to prove the absence of vulnerabilities in (closed-) source code. VeriZK leverages zkML (Zero-Knowledge Machine Learning) to prove the absence of vulnerabilities in (closed-) source code, particularly focusing on smart contracts within the decentralized finance (DeFi) ecosystem.
 
 ## Storytelling : User Experience 
+
+
+// ADD EXPLANATION OF THE CHATBOT 
+
 
 Imagine you've poured countless hours into crafting the perfect smart contract, only to face the daunting task of proving its safety without revealing your confidential source code.
 
@@ -26,20 +31,36 @@ Enter VeriZK! With VeriZK, developers can now confidently showcase the integrity
 
 ## How it's Made
 
+We are generating off-chain proofs using Sindri. 
 
 
-## Technologies Used
+# Technologies Used
 
-### AZTEC 
+
+## OPENAI 
+
+
+## AZTEC 
 
 Noir Language is used to .. 
 
-### SINDRI 
+#### Feedback 
 
-Sindri is used 
+
+## SINDRI 
+
+We are generating off-chain proofs using Sindri. 
+
+#### Feedback 
+Limitations : Sindri cannot call Oracles. We found a way to send the proof to our circuit and tell the bot to verify the proof. 
+
 
 ### SCROLL 
 
+We have created a contract through NOIR by running nargo prove and this contract was deployed to Scroll. 
+
+
+#### Feedback using Foundry 
 - Custom verification of smart contracts using Foundry : after deploying contracts, verification process is as follow :
 ```
 forge verify-contract \
@@ -54,10 +75,12 @@ forge verify-contract \
     ZKProof 
     
 ``` 
+#### Feedback 
 
 
 ### AVAIL 
 
+#### Feedback 
 
 
 # Instructions:
