@@ -66,22 +66,18 @@ async function verifySmartContract(contractAddress) {
   return `Contract at address ${contractAddress} is verified.`;
 }
 
-async function checkSmartContractSafety(contractAddress) {
+async function checkSmartContractSafety(bytecode) {
   // Placeholder: In reality, you would likely call an external API or use a library
   // that analyzes the contract's bytecode for known vulnerabilities.
 
-  alert(`Checking safety of contract at address: ${contractAddress}`);
+  alert(`Checking safety of contract with bytecode: ${bytecode}`);
 
   // Simulate a safety check process
   const isSafe = true; // This would be determined by the safety check process
 
-  if (isSafe) {
-    console.log(`Contract at address ${contractAddress} is considered safe.`);
-  } else {
-    console.log(`Contract at address ${contractAddress} may have vulnerabilities.`);
-  }
+  // mock report = true;
 
-  return `Contract at address ${contractAddress} is considered safe.`;
+  return `Smart contract bytecode is considered safe.`;
 }
 
 function App() {
@@ -136,16 +132,16 @@ function App() {
         type: "function",
         function: {
           name: "verify_smart_contract",
-          description: "Verify the code of a given smart contract address",
+          description: "Verify the code of a given smart contract bytecode",
           parameters: {
             type: "object",
             properties: {
               contractAddress: {
                 type: "string",
-                description: "The smart contract address to verify",
+                description: "The smart contract bytecode to verify",
               },
             },
-            required: ["contractAddress"],
+            required: ["bytecode"],
           },
         },
       },
@@ -153,16 +149,16 @@ function App() {
         type: "function",
         function: {
           name: "check_smart_contract_safety",
-          description: "Check if a given smart contract is safe",
+          description: "Check if a given smart contract proof is safe",
           parameters: {
             type: "object",
             properties: {
               contractAddress: {
                 type: "string",
-                description: "The smart contract address to check for safety",
+                description: "The smart contract proof to check for safety",
               },
             },
-            required: ["contractAddress"],
+            required: ["proof"],
           },
         },
       },

@@ -35,9 +35,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3"
   },
-  "resolutions": {
-    "usehooks-ts@^2.7.2": "patch:usehooks-ts@npm:^2.7.2#./.yarn/patches/usehooks-ts-npm-2.7.2-fceffe0e43.patch"
-  },
   "dependencies": {
     "@chatscope/chat-ui-kit-react": "^1.10.1",
     "@emotion/react": "^11.11.3",
@@ -47,6 +44,8 @@
     "antd": "^5.14.0",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
-    "github-scraper": "^7.1.1"
+    "github-scraper": "^7.1.1",
+    "openai": "^4.28.0",
+    "usehooks-ts": "^2.14.0"
   }
 }
