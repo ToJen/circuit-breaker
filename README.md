@@ -51,12 +51,7 @@ We have created a contract through NOIR by running nargo prove and this contract
 
 
 #### Feedback using Foundry 
-- Custom verification of smart contracts using Foundry : after deploying contracts, verification process is as follow :
-```
-
-    
-``` 
-
+- Custom verification of smart contracts using Foundry : after deploying contracts, verification process is smooth and documented on the foundry-packages. 
 
 
 # Instructions:
