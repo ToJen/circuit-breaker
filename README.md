@@ -51,7 +51,7 @@ We are generating off-chain proofs using Sindri.
 #### Feedback 
 Limitations : Sindri cannot call Oracles. We found a way to send the proof to our circuit and tell the bot to verify the proof. 
 
-### SCROLL 
+## SCROLL 
 
 We have created a contract through NOIR by running nargo prove and this contract was deployed to Scroll. 
 
@@ -62,7 +62,6 @@ We have created a contract through NOIR by running nargo prove and this contract
 
     
 ``` 
-#### Feedback 
 
 
 
