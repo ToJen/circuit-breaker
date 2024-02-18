@@ -28,12 +28,6 @@ Enter VeriBot! With VeriBot, developers can now confidently showcase the integri
 
 ## How it's Made
 
-We are generating off-chain proofs using Sindri.
-
-
-# Technologies Used
-
-
 ## AZTEC 
 
 Noir Language is used to verify the proofs. We are using the function verify from the plonk ```BaseUltraVerifier``` contract. 
