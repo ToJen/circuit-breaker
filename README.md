@@ -13,9 +13,6 @@
 ## Storytelling : User Experience 
 
 
-// ADD EXPLANATION OF THE CHATBOT 
-
-
 Imagine you've poured countless hours into crafting the perfect smart contract, only to face the daunting task of proving its safety without revealing your confidential source code.
 
 Enter VeriBot! With VeriBot, developers can now confidently showcase the integrity of their contracts without compromising their code's confidentiality. Through Zero-Knowledge Proofs and Machine Learning, VeriBot empowers you to demonstrate your contract's reliability while keeping your code private. Say goodbye to sleepless nights worrying about rug pulls or vulnerabilities – VeriBot has got your back, ensuring your creations are as trustworthy as they are confidential.
@@ -31,13 +28,10 @@ Enter VeriBot! With VeriBot, developers can now confidently showcase the integri
 
 ## How it's Made
 
-We are generating off-chain proofs using Sindri. We are then 
+We are generating off-chain proofs using Sindri.
 
 
 # Technologies Used
-
-
-## OPENAI 
 
 
 ## AZTEC 
@@ -57,7 +51,6 @@ We are generating off-chain proofs using Sindri.
 #### Feedback 
 Limitations : Sindri cannot call Oracles. We found a way to send the proof to our circuit and tell the bot to verify the proof. 
 
-
 ### SCROLL 
 
 We have created a contract through NOIR by running nargo prove and this contract was deployed to Scroll. 
@@ -71,10 +64,6 @@ We have created a contract through NOIR by running nargo prove and this contract
 ``` 
 #### Feedback 
 
-
-### AVAIL 
-
-#### Feedback 
 
 
 # Instructions:
