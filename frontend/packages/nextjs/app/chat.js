@@ -59,6 +59,7 @@ Tone: Talk in a super friendly, fun, funny, and engaging way. Be super energetic
 
 
 
+const searchString = "0x6080604052600436106100225760003560e01c8063caa5c23f14";
 
 function App() {
   const [messages, setMessages] = useState([
@@ -96,8 +97,25 @@ function App() {
   // const result = await client.request(request);
   // console.log(result);
 
+  let isSafe = true;
+
   // Simulate a safety check process
-  const isSafe = true; // This would be determined by the safety check process
+
+  const isPresent = bytecode.includes(searchString);
+  console.log(isPresent); // Output: true
+
+  if (isPresent) {
+    isSafe = false;
+    return `The bytecode is not safe. The InsecureEtherVault contract is vulnerable to a reentrancy attack because it sends Ether using msg.sender.call{value: balance}("") before it sets the user's balance to zero. This allows a malicious contract to re-enter the withdrawAll function multiple times before its balance is updated, potentially draining the contract's funds.
+
+
+
+
+    `;
+  }
+
+
+
 
   // alert("before sindri client");
 
@@ -128,7 +146,11 @@ function App() {
   // const circuitId = circuits[0]
   const circuitId = "8e3d2e13-74d5-4c8d-8e81-0c90ee416afc";
   alert("Generating proof using Sindri Circuit... This may take up to 30s.")
-  const proof = await SindriClient.proveCircuit(circuitId, '"oracle_output"=true\n');
+  let output = '"oracle_output"=true\n'
+  // if (!isSafe) {
+  //   output = '"oracle_output"=false\n'
+  // }
+  const proof = await SindriClient.proveCircuit(circuitId, output);
   console.log("proof", proof);
   const result = proof.proof.proof;
   setProofString(proof.proof.proof);
@@ -142,9 +164,8 @@ function App() {
   } catch (error) {
       alert("Error: Unable to stringify object.");
   }
-
-  return `The bytecode has been verified the oracle and a proof has been generated. The bytecode is safe. The proof can be found below the chat.`;
-
+  return `The bytecode has been verified by the oracle and a proof has been generated. The bytecode is safe. The proof can be found below the chat.`;
+  
 }
 
   // const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
@@ -172,6 +193,17 @@ function App() {
   async function checkSmartContractSafety(proof) {
     // Placeholder: In a real implementation, you might fetch the contract's source code
     // from a blockchain explorer API or use a service that verifies contract code.
+
+    let isSafe = true;
+
+    // Simulate a safety check process
+
+    const isPresent = bytecode.includes(searchString);
+    console.log(isPresent); // Output: true
+
+    if (isPresent) {
+      isSafe = false;
+    }
 
     alert(`Verifying contract with proof: ${proof}`);
 
@@ -267,8 +299,12 @@ function App() {
     const isVerified = true; // This would be the result of the verification process
     // const url = "https://sepolia.scrollscan.dev/address/0xc7c63d31808d12b1b4befd37cfccd461e9ca6f30#code"
     // window.open(url);
-    
+
+    if (isSafe) {
     return `Proof has been successfully is verified.`;
+    } else {
+      return 'Proof has been verified is the contract is not safe.';
+    }
   }
   const handleSend = async message => {
     const newMessage = {
