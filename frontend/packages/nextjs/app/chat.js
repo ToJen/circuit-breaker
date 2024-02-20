@@ -59,7 +59,8 @@ Tone: Talk in a super friendly, fun, funny, and engaging way. Be super energetic
 
 
 
-const searchString = "0x6080604052600436106100225760003560e01c8063caa5c23f14";
+const searchString = "608060405234801561001057600080fd5b50610566806100206000396000f3fe60806040526004361061003f5760003560e01c8063120";
+
 
 function App() {
   const [messages, setMessages] = useState([
@@ -198,12 +199,12 @@ function App() {
 
     // Simulate a safety check process
 
-    const isPresent = bytecode.includes(searchString);
-    console.log(isPresent); // Output: true
+    // const isPresent = pr.includes(searchString);
+    // console.log(isPresent); // Output: true
 
-    if (isPresent) {
-      isSafe = false;
-    }
+    // if (isPresent) {
+    //   isSafe = false;
+    // }
 
     alert(`Verifying contract with proof: ${proof}`);
 
@@ -306,7 +307,7 @@ function App() {
       return 'Proof has been verified is the contract is not safe.';
     }
   }
-  const handleSend = async message => {
+  const handleSend = async message => {    
     const newMessage = {
       message,
       direction: "outgoing",
@@ -336,7 +337,7 @@ function App() {
       } else {
         role = "user";
       }
-      return { role: role, content: messageObject.message };
+      return { role: role, content: messageObject.message.slice(0,500) };
     });
 
     // Get the request body set up with the model we plan to use
